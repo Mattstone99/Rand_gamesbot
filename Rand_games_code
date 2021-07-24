@@ -3,60 +3,102 @@ import telebot
 import time
 from telebot import TeleBot
 
-API_KEY="1920327941:AAGmZfhVeZ5rgbE8OzsVljnr378fQUKO8FM"
-bot=telebot.TeleBot(API_KEY)
+API_KEY = "1920327941:AAGmZfhVeZ5rgbE8OzsVljnr378fQUKO8FM"
+bot = telebot.TeleBot(API_KEY)
+
 
 @bot.message_handler(commands=['start'])  #starting bot
 def start_message(message):
-  bot.send_message(message.chat.id, "Welcome to Random Games Bot. Use /join to a random group")
+	bot.send_message(
+	    message.chat.id,
+	    "Welcome to Random Games Bot. Use /join to a random group")
 
-@bot.message_handler(commands=['help']) #help to tell users about the bot
+
+@bot.message_handler(commands=['help'])  #help to tell users about the bot
 def help_message(message):
-  bot.reply_to(message,"You will be matched to other users with similar game interest. Feel free to use these chats to make friends and have fun!!")
+	bot.reply_to(
+	    message,
+	    "You will be matched to other users with similar game interest. Feel free to use these chats to make friends and have fun!!"
+	)
 
-@bot.message_handler(commands=['join']) # list of games the bot provides
+
+@bot.message_handler(commands=['join'])  # list of games the bot provides
 def join_message(message):
-  bot.send_message(message.chat.id,"Please select your game:\n/Avalon\n/Chat_Against_Humanity\n/Dreamers\n/Hangman\n/Poker\n/Quizzarium\n/Uno\n/Werewolf")
+	bot.send_message(
+	    message.chat.id,
+	    "Please select your game:\n/Avalon\n/Chat_Against_Humanity\n/Dreamers\n/Hangman\n/Poker\n/Quizzarium\n/Uno\n/Werewolf"
+	)
 
 
 # the following are the links to the group to host the game
 
+
 @bot.message_handler(commands=['Werewolf'])
 def werewolf_message(message):
-  bot.send_message(message.chat.id,"Please click the link to join: https://t.me/joinchat/s2sgkdBnNnw4ZDE9")
+	bot.send_message(
+	    message.chat.id,
+	    "Please click the link to join: https://t.me/joinchat/s2sgkdBnNnw4ZDE9"
+	)
+
 
 @bot.message_handler(commands=['Dreamers'])
 def dreamers_message(message):
-  bot.send_message(message.chat.id,"Please click the link to join: https://t.me/joinchat/K-BhYcsodKAxNjQ1")
+	bot.send_message(
+	    message.chat.id,
+	    "Please click the link to join: https://t.me/joinchat/K-BhYcsodKAxNjQ1"
+	)
+
 
 @bot.message_handler(commands=['Avalon'])
 def avalon_message(message):
-  bot.send_message(message.chat.id,"Please click the link to join: https://t.me/joinchat/hxWjOu_JS6UwOTA1")
-  
+	bot.send_message(
+	    message.chat.id,
+	    "Please click the link to join: https://t.me/joinchat/hxWjOu_JS6UwOTA1"
+	)
+
 
 @bot.message_handler(commands=['Uno'])
 def Uno_message(message):
-  bot.send_message(message.chat.id,"Please click the link to join: https://t.me/joinchat/SyAMSugM5x5kNmVl")
+	bot.send_message(
+	    message.chat.id,
+	    "Please click the link to join: https://t.me/joinchat/SyAMSugM5x5kNmVl"
+	)
+
 
 @bot.message_handler(commands=['Poker'])
 def poker_message(message):
-  bot.send_message(message.chat.id,"Please click the link to join: https://t.me/joinchat/BzCidJG1xL0yMGU1")
+	bot.send_message(
+	    message.chat.id,
+	    "Please click the link to join: https://t.me/joinchat/BzCidJG1xL0yMGU1"
+	)
+
 
 @bot.message_handler(commands=['Chat_Against_Humanity'])
 def CAH_message(message):
-  bot.send_message(message.chat.id,"Please click the link to join: https://t.me/joinchat/mv7qyFEncakxNmJl")
-  
+	bot.send_message(
+	    message.chat.id,
+	    "Please click the link to join: https://t.me/joinchat/mv7qyFEncakxNmJl"
+	)
+
 
 @bot.message_handler(commands=['Hangman'])
 def Hangman_message(message):
-  bot.send_message(message.chat.id,"Please click the link to join: https://t.me/joinchat/xKFkdS21wZ9jYjFl")
+	bot.send_message(
+	    message.chat.id,
+	    "Please click the link to join: https://t.me/joinchat/xKFkdS21wZ9jYjFl"
+	)
+
 
 @bot.message_handler(commands=['Quizzarium'])
 def quizzarium_message(message):
-  bot.send_message(message.chat.id,"Please click the link to join: https://t.me/joinchat/Z2NeEMryZ6wxYzll")
+	bot.send_message(
+	    message.chat.id,
+	    "Please click the link to join: https://t.me/joinchat/Z2NeEMryZ6wxYzll"
+	)
+
 
 while True:
-  try:
-    bot.polling()
-  except Exception:
-    time.sleep(15)
+	try:
+		bot.polling()
+	except Exception:
+		time.sleep(15)
